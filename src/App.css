@@ -1,0 +1,46 @@
+import React from 'react'
+
+const App = () => {
+
+
+  const [name, setname] = useState('')
+  const [company, setcompany] = useState('')
+  const [phoneNumber, setphoneNumber] = useState('')
+  const [allUsers, setallUsers] = useState([])
+
+  const submitHandler =(e)=>{
+       e.preventDefault()
+
+       const newUsers = [...allUsers,{name,company,phoneNumber}]
+       setallUsers(newUsers)
+
+       setname('')
+       setcompany('')
+       setphoneNumber('')
+
+  }
+
+
+  return (
+    <div>
+      <form onSubmit={(e)=>{submitHandler(e)}}>
+        <h2>Add Contact</h2>
+
+        <label  >Name</label>
+        <input onChange={(e)=>{setname(e.target.value)}} value={name} type="text" placeholder='Enter name' required/><br />
+
+        <label >Company</label>
+        <input onChange={(e)=>{setcompany(e.target.value)}} value={company} type="text" placeholder='Enter company' /><br />
+
+        <label >Phone</label>
+        <input onChange={(e)=>{setphoneNumber(e.target.value)}} value={phoneNumber} type="number" placeholder='Enter phone number' required/><br />
+
+        {/* <input type="checkbox" />Favourite  <br /> */}
+        <button>Add Contact</button>
+      </form>
+      <div></div>
+    </div>
+  )
+}
+
+export default App
