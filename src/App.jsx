@@ -72,7 +72,7 @@ const App = () => {
                        <h3 className='text-sm font-normal'>Company: {elem.company}</h3>
                        <h3 className='text-sm font-normal'>Phone: {elem.phoneNumber}</h3>
                        <div className='flex justify-between mt-2'>
-                           { elem.isFavorite ? <div  className='p-2 px-4 text-white bg-orange-500  rounded-3xl text-sm mt-3'>Favourite</div> : <></> }
+                           { elem.isFavorite ? <div  className='p-2 px-4 text-white bg-orange-500  rounded-3xl text-sm mt-3'>Favourite</div> : <div></div> }
                            <button onClick={()=>{deleteHandler(i)}} className='py-2 px-3 text-white bg-red-500  rounded text-sm mt-3'>Delete</button>
                        </div>
 
